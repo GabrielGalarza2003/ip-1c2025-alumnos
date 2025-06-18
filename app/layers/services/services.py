@@ -17,8 +17,8 @@ def getAllImages():
             "height": image["height"],
             "weight": image["weight"],
             "base": image["base_experience"],
-            "image": image.get("sprites", {}).get("other", {}).get("official-artwork", {}).get("front_default", ""),
-            "type": image.get("types", [])[0]["type"]["name"] if image.get("types") else "unknown",
+            "image": image["sprites"]["other"]["official-artwork"]["front_default"],
+            "type": image["types"][0]["type"]["name"],
             "types": [t["type"]["name"] for t in image.get("types", [])]
         })
     return image_cards
